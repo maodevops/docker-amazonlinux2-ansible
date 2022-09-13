@@ -6,7 +6,7 @@
 ARG BASE_IMAGE_TAG=2
 
 # hadolint ignore=DL3006
-FROM docker amazonlinux:${BASE_IMAGE_TAG}
+FROM amazonlinux:${BASE_IMAGE_TAG}
 
 ENV container=docker
 
