@@ -1,11 +1,11 @@
 #
-# Dockerfile used to build RockyLinux 8 images for testing Ansible
+# Dockerfile used to build AmazonLinux 2 images for testing Ansible
 #
+
 # syntax = docker/dockerfile:1
 
 ARG BASE_IMAGE_TAG=2
 
-# hadolint ignore=DL3006
 FROM amazonlinux:${BASE_IMAGE_TAG}
 
 ENV container=docker
@@ -26,8 +26,6 @@ RUN yum clean all ; \
   yum -y autoremove ; \
   rm -rf /var/cache/yum ;
 
-# Stop systemd from spawning agettys on tty[1-6].
-# RUN rm -f /lib/systemd/system/multi-user.target.wants/getty.target
-
 VOLUME ["/sys/fs/cgroup"]
+
 CMD ["/usr/lib/systemd/systemd"]
