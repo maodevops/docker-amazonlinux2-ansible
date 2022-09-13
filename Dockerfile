@@ -14,7 +14,6 @@ RUN yum -y update \
   && yum clean all \
   && yum -y autoremove
 
-
 RUN yum makecache fast \
   && yum -y install \
   https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm \
