@@ -9,7 +9,7 @@ env:
   IMAGE_DISTRO: AmazonLinux
 
 jobs:
-  docker:
+  docker_build_and_push:
     runs-on: ubuntu-latest
 
     strategy:
