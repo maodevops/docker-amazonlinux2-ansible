@@ -20,6 +20,7 @@ jobs:
       - name:
         id: buildenv
         run: |
+          hwclock -s
           IMAGE_NAME=$(echo ${GITHUB_REPOSITORY#*/} | sed 's/docker-//g')
           echo  "::set-output name=image_name::${IMAGE_NAME}"
           echo  "::set-output name=owner::${GITHUB_REPOSITORY_OWNER}"
